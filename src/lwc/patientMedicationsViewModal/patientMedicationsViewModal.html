@@ -1,0 +1,20 @@
+<template>
+    <lightning-modal-header label={label}></lightning-modal-header>
+    <lightning-modal-body class="slds-is-relative">
+        <lightning-spinner if:true={renderSpinner} alternative-text="Loading" size="medium"></lightning-spinner>
+        <div class="slds-p-around_medium">
+            <div class="slds-box">
+                <div if:true={data}>
+                    <lightning-datatable
+                            show-row-number-column
+                            key-field="id"
+                            data={data}
+                            hide-checkbox-column
+                            columns={columns}
+                    >
+                    </lightning-datatable>
+                </div>
+            </div>
+        </div>
+    </lightning-modal-body>
+</template>
