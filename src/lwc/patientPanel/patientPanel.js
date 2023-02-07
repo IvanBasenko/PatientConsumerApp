@@ -103,11 +103,11 @@ export default class PatientPanel extends LightningElement {
         }
         try {
             this.renderSpinner = true;
-            const response = await updatePatientData({
+            await updatePatientData({
                 patientId: Id,
                 body: JSON.stringify(rest)
             });
-            this.data[rowIndex] = Object.assign(this.data[rowIndex], response);
+            this.data[rowIndex] = Object.assign(this.data[rowIndex], rest);
             this.data[rowIndex].isSubmitDisabled = true;
             this.draftValues = this.draftValues.filter(_ => _.Id !== Id);
 
